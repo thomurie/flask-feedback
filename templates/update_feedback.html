@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block title%}Secret{% endblock %} {% block
+    content%}
+    
+    <form action="/feedback/{{ feedback.id }}/update"" method="post">
+      {{ form.hidden_tag() }} {% for field in form if field.widget.input_type !=
+      'hidden' %}
+    
+      <p>{{ field.label }} {{ field }}  </p>
+    
+      {% endfor %}
+    
+      <button type="submit">Submit</button>
+    </form>
+    {% endblock %}
+    

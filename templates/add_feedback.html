@@ -1,6 +1,7 @@
-{% extends 'base.html' %} {% block title%}Register{% endblock %} {% block
+{% extends 'base.html' %} {% block title%}Secret{% endblock %} {% block
 content%}
-<form action="/register" method="post">
+
+<form action="/user/{{ user.username }}/feedback/add"" method="post">
   {{ form.hidden_tag() }} {% for field in form if field.widget.input_type !=
   'hidden' %}
 
@@ -9,9 +10,5 @@ content%}
   {% endfor %}
 
   <button type="submit">Submit</button>
-</form>
-<h3>Already have an account?</h3>
-<form action="/login" method="get">
-  <button>Login</button>
 </form>
 {% endblock %}
